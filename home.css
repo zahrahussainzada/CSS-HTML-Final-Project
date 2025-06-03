@@ -16,8 +16,7 @@ html, body {
     rgb(72, 21, 170, 0.09)
   ),
   black;
-  animation: wavingColors 10s linear infinite;
-    /* background: url('file:///Users/zahrahussainzada/Documents/HTML Pics/BodyBack.jpg') center center/cover no-repeat; */
+    animation: wavingColors 10s linear infinite;
     margin: 0;
     display: grid;
     background-attachment: fixed; /* optional: makes it stick during scroll */
@@ -28,30 +27,11 @@ html, body {
     font-family: 'Sunshiney', cursive;
     padding: 20px;
 }
-@keyframes wavingColors {
-  0% {
-      background-position: 0% 50%;
-  }
-  100% {
-      background-position: 100% 50%;
-  }
-}
-@media (max-width: 600px) {
-  body {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 400px) {
-  body {
-    font-size: 14px;
-  }
-}
 .sunshiney-regular {
     font-family: "Sunshiney", cursive;
     font-weight: 400;
     font-style: normal;
-  }  s
+  }    
 .Navbar{
   display: flex;
   flex-direction: flex-start;
@@ -144,7 +124,6 @@ header h1{
   height: 160px;
   padding: 10px;
   border-radius: 10px;
-  background: url('https://raw.githubusercontent.com/zahrahussainzada/CSS-HTML-Final-Project/refs/heads/main/Back1.jpg') no-repeat center center/cover;
   opacity: 0.7;
   box-shadow: 4px 4px 4px 4px rgb(147, 185, 212);
   color: rgb(140, 113, 96);
@@ -223,7 +202,6 @@ list-style-type: none;
     background-image: url('https://raw.githubusercontent.com/zahrahussainzada/CSS-HTML-Final-Project/refs/heads/main/sky.jpg') top/cover;
   }
 .History{
-  background-image: url('https://raw.githubusercontent.com/zahrahussainzada/CSS-HTML-Final-Project/refs/heads/main/Back12.jpg') ;
   display: flex;
   flex-direction: column;
   width: 200px;
@@ -273,7 +251,6 @@ list-style-type: none;
   margin: 0;
 }
 .Myproject{
-  background-image: url('https://raw.githubusercontent.com/zahrahussainzada/CSS-HTML-Final-Project/refs/heads/main/sky.jpg');
   background: none; /* we'll move the background to the pseudo-element */
   display: flex;
   flex-direction: column;

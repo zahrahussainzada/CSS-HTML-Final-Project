@@ -294,6 +294,11 @@ list-style-type: none;
       padding: 5px;
       text-align: left;
 }
+
+.overlay a{
+  list-style: none;
+  color: white;
+}
     
 .image-box:hover .overlay {
       opacity: 1;

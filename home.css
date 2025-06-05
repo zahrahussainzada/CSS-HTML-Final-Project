@@ -58,7 +58,9 @@ header h1{
     margin: 0;
 }
 .BodyBox {
-  position: relative;
+  position: relative;/* When you want to slightly adjust an element's position without affecting surrounding elements. 
+When creating a positioning context for absolutely positioned child elements (i.e., if you have position: absolute inside this, it will be relative to this parent).
+Useful for subtle shifts, animations, or positioning tooltips, icons, badges, etc.*/
     width: 630px;
     padding: 60px;
     min-height: 380px;
@@ -72,8 +74,12 @@ header h1{
     justify-content: center;
     align-items: center;
     margin: 40px 20px 20px 10px;
-    overflow-wrap: break-word; /* break long words */
-    z-index: 1;
+    overflow-wrap: break-word; /* break long words 1- Forces long words or URLs to break and wrap onto the next line instead of overflowing their container.
+                                                    2-When you want to prevent layout issues caused by long text strings breaking out of their container.*/
+    z-index: 1; /* 1-Sets the stacking order of the element.
+                  2-Elements with higher z-index values appear on top of elements with lower values. 
+                  3-Only works on elements with a positioning context (position set to relative, absolute, fixed, or sticky).
+                  4-When you need to control which elements appear in front of or behind others.*/
     background: none; /* we'll move the background to the pseudo-element */
    
 }
@@ -94,10 +100,16 @@ header h1{
         #996aba,
         #ab7dd0
     );
-    background-size: 200% auto; /* Wider to give more wave-like effect */
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-size: 200% auto; /* Wider to give more wave-like effect
+                                  Makes the background (usually a gradient) wider, so when you animate it (e.g., move it left to right), it looks like it's flowing, like a wave or a shimmer.*/
+   background-clip: text;/*  The background-clip CSS property controls how far the background (color or gradient) extends — whether it covers the border, padding, or content.
+                              background-clip: text; Only show the background inside the text. Nowhere else.
+                              The text itself becomes like a window that shows the background only within the shape of the letters.
+                              The rest of the element (the padding, borders, etc.) won’t show the background.*/
+  -webkit-background-clip: text;   /* Same as background-clip: text, but ensures it works across all browsers.*/
+  -webkit-text-fill-color: transparent;/*   Makes the text itself transparent.
+                                            This lets the background show through the clipped text.
+                                            So this line hides the actual color of the text, revealing the background inside.*/
     animation: waveColors 10s linear infinite;
 }
 @keyframes waveColors {
@@ -109,13 +121,15 @@ header h1{
     }
 }
 .BodyBox::before, .InnerBox::before {
-  content: "";
+  content: "";/*  “Create a blank, invisible layer (or box) on top of or behind the element — and then I’ll style that layer however I want.” */
   position: absolute;
   top: 0; left: 0;
-  width: 100%; height: 100%;
+  width: 100%; height: 100%;/* Makes the pseudo-element cover the entire size of the parent — full width and height.  */
   opacity: 0.7; /* ✅ only affects the background */
   border-radius: 10px;
-  z-index: -1; /* ensures it stays behind your content */
+  z-index: -1; /*  Sends the ::before element behind the main content of .BodyBox or .InnerBox. 
+                    Without this, the pseudo-element would sit on top of the real content and possibly block it. */
+                    /* ensures it stays behind your content */
 }
 /* InnerBox stays the same */
 .InnerBox {
@@ -226,7 +240,14 @@ list-style-type: none;
   opacity: 0.5; /* ✅ only affects the background */
   border-radius: 50%;
   z-index: -1; /* ensures it stays behind your content */
-  transition: background-color 0.3s ease, transform 0.3s ease ;
+  transition: background-color 0.3s ease, transform 0.3s ease ;/*   When either background-color or transform changes (e.g. on hover), 
+                                                                    they will transition smoothly over 0.3 seconds, instead of changing instantly. 
+                                                                    background-color the property we want to be animated.
+                                                                    0.3s: how long the transition takes
+                                                                    ease: the timing function, which controls the speed curve of the animation 
+                                                                    (it starts slow, speeds up, and slows down again).
+                                                                    (comma): separates multiple transitions.
+                                                                    transform: the second property being animated, with the same duration and ease.*/
 }
 .History:hover{
   color: white;

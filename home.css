@@ -468,11 +468,11 @@ img {
   .NaviBar ul {
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
   }
 
   .Pyramid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .Myproject {
@@ -524,6 +524,7 @@ img {
   .NavBar ul {
     flex-direction: row;
     align-items: center;
+    gap:5px;
   }
 
   .Pyramid,
